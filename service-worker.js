@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/twitwar/precache-manifest.04d35d1cac76cef4117acc51e6c0e10e.js"
+  "/twitwar/precache-manifest.1913fd8871725b1980077dbbba4402d4.js"
 );
 
 self.addEventListener('message', (event) => {
