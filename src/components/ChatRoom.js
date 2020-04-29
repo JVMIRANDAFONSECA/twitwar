@@ -53,6 +53,10 @@ export default class ChatRoom extends React.Component {
     };
   }
 
+  componentDidMount() {
+    window.addEventListener("beforeunload", () => this.handleExit());
+ }
+
   onMessageReceive = (msg, topic) => {
     let tbMsg = {
       author: msg.sender,
@@ -80,6 +84,17 @@ export default class ChatRoom extends React.Component {
       return false;
     }
   };
+
+  handleExit = () => {
+      fetch("https://twit-war.herokuapp.com/api/leave?roomId=" + this.props.room + "&trend=" + this.props.lobby, {
+          method: 'POST'
+      });
+  }
+
+  handleClick = () => {
+      this.props.setOpinion(false);
+      this.handleExit();
+  }
 
   render() {
     const wsSourceUrl = "https://twit-war.herokuapp.com/ws";
@@ -110,6 +125,7 @@ export default class ChatRoom extends React.Component {
             }}
             debug={false}
           />
+          <button className="btn btn-primary" onClick={this.handleClick}>Exit</button>
         </div>
       </div>
     ) : null;

@@ -7,13 +7,24 @@ const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
   return (
-    <div>
-      {!isAuthenticated && (
-        <button onClick={() => loginWithRedirect({})}>Log in</button>
-      )}
-
-      {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
-    </div>
+    <nav class="navbar navbar-light bg-light">
+        <div>
+          {!isAuthenticated && (
+            <button
+              className="btn btn-primary"
+              onClick={() => loginWithRedirect({})}
+            >
+              Log in
+            </button>
+          )}
+          {isAuthenticated && (
+            <button className="btn btn-primary" onClick={() => logout()}>
+              Log out
+            </button>
+          )}
+        </div>
+        <h6>TwitWars</h6>
+    </nav>
   );
 };
 

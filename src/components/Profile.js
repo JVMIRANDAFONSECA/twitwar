@@ -12,13 +12,9 @@ const Profile = () => {
 
   return (
     <Fragment>
-      <img src={user.picture} alt="Profile" />
-
-      <h2>{user.name}</h2>
-      <p>{user.email}</p>
-      <code>{JSON.stringify(user, null, 2)}</code>
+      <h2>Welcome, {user.name}!</h2>
     </Fragment>
   );
 };
-
+ 
 export default Profile;

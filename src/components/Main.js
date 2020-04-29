@@ -70,13 +70,15 @@ export default class Main extends React.Component {
           <TrendList
             trends={this.state.trends}
             username={this.state.username}
-            opinion={this.setHasClickedOpinion}
+            setOpinion={this.setHasClickedOpinion}
+            opinion={this.state.hasClickedOpinion}
             polarity={this.setPolarity}
             lobby={this.setLobby}
             setRoom={this.setRoom}
           />
           <ChatRoom
             username={this.state.username}
+            setOpinion={this.setHasClickedOpinion}
             opinion={this.state.hasClickedOpinion}
             polarity={this.state.polarity}
             lobby={this.state.lobby}

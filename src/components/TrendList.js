@@ -1,20 +1,14 @@
 import React from "react";
+import Profile from "./Profile";
 
 export default class TrendList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      hasClickedOpinion: false,
-    };
   }
   handleClickAgree = (lobby) => {
-    this.props.opinion(true);
     this.props.polarity(true);
     this.props.lobby(lobby);
-    this.setState({
-      hasClickedOpinion: true,
-      room: null,
-    });
+    this.props.setOpinion(true);
     fetch(
       "https://twit-war.herokuapp.com/api/room?trend=" +
         lobby +
@@ -40,12 +34,9 @@ export default class TrendList extends React.Component {
       );
   };
   handleClickDisagree = (lobby) => {
-    this.props.opinion(true);
     this.props.polarity(false);
     this.props.lobby(lobby);
-    this.setState({
-      hasClickedOpinion: true,
-    });
+    this.props.setOpinion(true);
     fetch(
       "https://twit-war.herokuapp.com/api/room?trend=" +
         lobby +
@@ -71,7 +62,7 @@ export default class TrendList extends React.Component {
       );
   };
   render() {
-    const { trends, username } = this.props;
+    const { trends, username } = this.props
     const trendList = trends.map((trend) => {
       return (
         <div className="trendContainer my-5" key={trend.id}>
@@ -100,10 +91,10 @@ export default class TrendList extends React.Component {
         </div>
       );
     });
-    return username.trim() && !this.state.hasClickedOpinion ? (
+    return username.trim() && !this.props.opinion ? (
       <div className="container">
         <div className="jumbotron">
-          <h3 className="text-center overflow-auto">Welcome, {username}!</h3>
+          <Profile />
           {trendList}
         </div>
       </div>
