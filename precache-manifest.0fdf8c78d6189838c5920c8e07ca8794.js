@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b56f41eb6055356465dffdcb5206aac6",
+    "revision": "1c0ebbde8fb5a7bc66c491ebe24f75c5",
     "url": "/twitwar/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/twitwar/static/css/2.74189dbb.chunk.css"
   },
   {
-    "revision": "2c625f40f85b4aea70df",
+    "revision": "4352bf1fa1ab0afac988",
     "url": "/twitwar/static/css/main.73248f88.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/twitwar/static/js/2.4ceae81e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2c625f40f85b4aea70df",
-    "url": "/twitwar/static/js/main.a80ce64a.chunk.js"
+    "revision": "4352bf1fa1ab0afac988",
+    "url": "/twitwar/static/js/main.be8b8e4e.chunk.js"
   },
   {
     "revision": "63df265a9aa5be92e570",
